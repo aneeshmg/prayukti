@@ -1,9 +1,8 @@
-const fs = require('fs')
-const path = require('path')
+const db = require('./db')
 
 const index = (req, res) => {
     res.render('index', {
-        title: 'Welcome to Prayukti',
+        title: 'Prayukti | Get motivated!',
     })
 }
 

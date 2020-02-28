@@ -5,7 +5,8 @@ const path = require('path')
 const cors = require('cors')
 
 const config = require('./config')
-const routes = require('./routes')
+const siteRoutes = require('./siteRoutes')
+const apiRoutes = require('./apiRoutes')
 const db = require('./db')
 
 const app = express()
@@ -20,11 +21,13 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use('/js', express.static(path.join(__dirname, './views/js')))
+app.use('/favicons', express.static(path.join(__dirname, './views/favicons')))
 
 // Always wear helmet
 app.use(helmet())
 app.use(cors())
 
-app.use('/', routes)
+app.use('/', siteRoutes)
+app.use('/api', apiRoutes)
 
 module.exports = app

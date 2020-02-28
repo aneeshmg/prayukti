@@ -1,0 +1,9 @@
+Suggested git flow:
+
+All development happens on a dev branch
+Before starting development, git pull origin dev -> fix any merge conflicts if any
+Write code -> commit -> push to dev branch
+End of sprint, ensure application is working (no errors, etc) merge to master branch
+
+For more granularity, we could also have sprint branches instead of just one dev branch. Like:
+For sprint 1, sprint-1, etc and at the end of each sprint, we'd merge sprint-x branch into master branch, and at the begining of a sprint, we'd create a new sprint branch
