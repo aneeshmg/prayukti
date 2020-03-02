@@ -27,6 +27,16 @@ app.use('/favicons', express.static(path.join(__dirname, './views/favicons')))
 app.use(helmet())
 app.use(cors())
 
+db.connectToDatabase()
+    .then(() => {
+        let db = require('./db').getDb()
+        console.log('lolol',db)
+    })
+    .catch(error => {
+        console.log("Something went wrong connecting to database ", error)
+        process.exit(1)
+    })
+
 app.use('/', siteRoutes)
 app.use('/api', apiRoutes)
 
