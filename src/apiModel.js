@@ -1,7 +1,7 @@
 class APIResponse {
-    constructor(data, source = 'Unknown') {
-        this.data = data
-        this.source = source
+    constructor(data) {
+        this.data = data.quote
+        this.source = data.source != "" ? data.source : "Unknown"
     }
 }
-module.exports = APIResponse;
+module.exports = APIResponse

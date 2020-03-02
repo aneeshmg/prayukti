@@ -1,14 +1,15 @@
-const db = require('./db')
+const _db = require('./db')
 const apiModel = require('./apiModel')
 
 const index = (req, res) => {
-    let response = new apiModel('Prayukti - Get motivated!')
+    const response = 'Prayukti - Get motivated!'
     res.send(response)
 }
 
 const getLine = (req, res) => {
-    let response = new apiModel("Awesomeness")
-    res.send(response)
+    let db = _db.getDb()
+    
+    res.send(new apiModel(db[Math.floor(Math.random() * db.length)]))
 }
 
 

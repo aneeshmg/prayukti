@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const cors = require('cors')
 
-const config = require('./config')
 const siteRoutes = require('./siteRoutes')
 const apiRoutes = require('./apiRoutes')
 const db = require('./db')
@@ -28,10 +27,7 @@ app.use(helmet())
 app.use(cors())
 
 db.connectToDatabase()
-    .then(() => {
-        let db = require('./db').getDb()
-        console.log('lolol',db)
-    })
+    .then()
     .catch(error => {
         console.log("Something went wrong connecting to database ", error)
         process.exit(1)
