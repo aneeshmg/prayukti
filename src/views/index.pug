@@ -3,7 +3,6 @@ html(lang="en")
     head
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title= title
-        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css")
         link(rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png")
         link(rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png")
         link(rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png")
@@ -12,9 +11,11 @@ html(lang="en")
             include css/main.css
     body
         div(class='page-header')
-            h1 Prayukti
+            center
+                h1=quote
+                h2 -- #{source}
 
 
 
-
-script(src="/js/index.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js")
+script(src="/js/main.js")
