@@ -6,6 +6,7 @@ let _db
 const connectToDatabase = () => {
     return new Promise((res, rej) => {
         _db = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json')))
+        console.log(_db.length)
         res()
     })
 }
